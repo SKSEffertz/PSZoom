@@ -1,10 +1,10 @@
 <#
 
 .SYNOPSIS
-Retrieve a telephone report for a specified period of time. 
+Retrieve a Zoom Phone call log report for a specified period of time. 
 
 .DESCRIPTION
-Retrieve a telephone report for a specified period of time.
+Retrieve a Zoom Phone call log report for a specified period of time. 
 
 .PARAMETER From
 Start date.
@@ -18,19 +18,15 @@ The number of records returned within a single API call.
 .PARAMETER PageNumber
 The current page number of returned records.
 
-.PARAMETER YearTiDate
-Use this switch to automatically retrieve all entries for the calendar year.
-
 .PARAMETER CombineAllPages
 If a report has multiple pages this will loop through all pages automatically and place all telephony usage found 
 from each page into the telephony_usage field of the report generated. The page size is set automatically to 300.
+
 .PARAMETER Type
-Audio types: 1 - Toll-free Call-in & Call-out. The only option is 1. This defaults to 1.
-Note that Zoom documents this as a request parameter so it is included here. However it has no practical use at the moment.
+The type of the call logs. The value can be either "all" or "missed".
 
 .EXAMPLE
 Get-ZoomTelephoneReports -from '2019-07-01' -to '2019-07-31' -page 1 -pagesize 300
-Get-ZoomTelephoneReports -ytd
 
 .OUTPUTS
 A hastable with the Zoom API response.

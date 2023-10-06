@@ -1,10 +1,10 @@
 <#
 
 .SYNOPSIS
-Retrieve a telephone report for a specified period of time. 
+Retrieve a Zoom Phone call charges report for a specified period of time. 
 
 .DESCRIPTION
-Retrieve a telephone report for a specified period of time.
+Retrieve a Zoom Phone call charges report for a specified period of time. 
 
 .PARAMETER From
 Start date.
@@ -15,7 +15,6 @@ End date.
 .PARAMETER PageSize
 The number of records returned within a single API call.
 
-
 .PARAMETER NextPageToken
 token to receive the next page of a resultset.
 
@@ -24,8 +23,8 @@ If a report has multiple pages this will loop through all pages automatically an
 from each page into the telephony_usage field of the report generated. The page size is set automatically to 300.
 
 .EXAMPLE
-Get-ZoomPhoneCharges -from '2019-07-01' -to '2019-07-31' -page 1 -pagesize 300
-Get-ZoomPhoneCharges -ytd
+Get-ZoomPhoneCharges -from '2019-07-01' -to '2019-07-31' -pagesize 300
+Get-ZoomPhoneCharges -from '2019-07-01' -to '2019-07-31' -NextPageToken 12345-abcde-edf
 
 .OUTPUTS
 A hastable with the Zoom API response.
